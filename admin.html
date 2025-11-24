@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ChemTrade</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="admin-body">
+    <!-- Admin Sidebar -->
+    <aside class="admin-sidebar">
+        <div class="admin-logo">
+            <i class="fas fa-flask"></i>
+            <span>ChemTrade Admin</span>
+        </div>
+        
+        <nav class="admin-nav">
+            <ul>
+                <li class="active">
+                    <a href="#dashboard">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#products">
+                        <i class="fas fa-box"></i>
+                        <span>Sản phẩm</span>
+                        <span class="nav-badge">124</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#orders">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Đơn hàng</span>
+                        <span class="nav-badge new">12</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#customers">
+                        <i class="fas fa-users"></i>
+                        <span>Khách hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#inventory">
+                        <i class="fas fa-warehouse"></i>
+                        <span>Kho hàng</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#analytics">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>Thống kê</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#documents">
+                        <i class="fas fa-file-alt"></i>
+                        <span>Tài liệu</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#settings">
+                        <i class="fas fa-cog"></i>
+                        <span>Cài đặt</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="admin-user">
+            <div class="user-avatar">AD</div>
+            <div class="user-info">
+                <div class="user-name">Admin User</div>
+                <div class="user-role">Quản trị viên</div>
+            </div>
+            <button class="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+        </div>
+    </aside>
+
+    <!-- Admin Main Content -->
+    <main class="admin-main">
+        <!-- Top Bar -->
+        <header class="admin-header">
+            <div class="header-left">
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Tìm kiếm...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">5</span>
+                </button>
+                <a href="index.html" class="view-site-btn">
+                    <i class="fas fa-external-link-alt"></i> Xem trang web
+                </a>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="admin-content">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card blue">
+                    <div class="stat-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-label">Doanh thu hôm nay</div>
+                        <div class="stat-value">45,750,000 ₫</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 12.5% so với hôm qua
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card green">
+                    <div class="stat-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-label">Đơn hàng mới</div>
+                        <div class="stat-value">24</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 8 đơn chờ xử lý
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card orange">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-label">Khách hàng mới</div>
+                        <div class="stat-value">156</div>
+                        <div class="stat-change positive">
+                            <i class="fas fa-arrow-up"></i> 23% tháng này
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-card red">
+                    <div class="stat-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div class="stat-details">
+                        <div class="stat-label">Sản phẩm sắp hết</div>
+                        <div class="stat-value">12</div>
+                        <div class="stat-change negative">
+                            <i class="fas fa-arrow-down"></i> Cần nhập thêm
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Row -->
+            <div class="charts-row">
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Doanh Thu 7 Ngày Qua</h3>
+                        <select class="chart-filter">
+                            <option>7 ngày</option>
+                            <option>30 ngày</option>
+                            <option>90 ngày</option>
+                        </select>
+                    </div>
+                    <div class="chart-placeholder">
+                        <div class="bar-chart">
+                            <div class="bar" style="height: 60%;"><span>28M</span></div>
+                            <div class="bar" style="height: 75%;"><span>35M</span></div>
+                            <div class="bar" style="height: 55%;"><span>25M</span></div>
+                            <div class="bar" style="height: 85%;"><span>40M</span></div>
+                            <div class="bar" style="height: 70%;"><span>32M</span></div>
+                            <div class="bar" style="height: 90%;"><span>42M</span></div>
+                            <div class="bar active" style="height: 95%;"><span>45M</span></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>T2</span>
+                            <span>T3</span>
+                            <span>T4</span>
+                            <span>T5</span>
+                            <span>T6</span>
+                            <span>T7</span>
+                            <span>CN</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="card-header">
+                        <h3>Sản Phẩm Bán Chạy</h3>
+                        <a href="#" class="view-all">Xem tất cả</a>
+                    </div>
+                    <div class="top-products">
+                        <div class="product-row">
+                            <div class="product-rank">1</div>
+                            <div class="product-name">
+                                <i class="fas fa-flask"></i>
+                                Ethanol 99.9%
+                            </div>
+                            <div class="product-sales">156 đơn</div>
+                            <div class="product-revenue">12.5M ₫</div>
+                        </div>
+                        <div class="product-row">
+                            <div class="product-rank">2</div>
+                            <div class="product-name">
+                                <i class="fas fa-vial"></i>
+                                HCl 37%
+                            </div>
+                            <div class="product-sales">142 đơn</div>
+                            <div class="product-revenue">10.2M ₫</div>
+                        </div>
+                        <div class="product-row">
+                            <div class="product-rank">3</div>
+                            <div class="product-name">
+                                <i class="fas fa-prescription-bottle"></i>
+                                NaOH 98%
+                            </div>
+                            <div class="product-sales">128 đơn</div>
+                            <div class="product-revenue">8.9M ₫</div>
+                        </div>
+                        <div class="product-row">
+                            <div class="product-rank">4</div>
+                            <div class="product-name">
+                                <i class="fas fa-droplet"></i>
+                                Acetone 99.5%
+                            </div>
+                            <div class="product-sales">115 đơn</div>
+                            <div class="product-revenue">7.8M ₫</div>
+                        </div>
+                        <div class="product-row">
+                            <div class="product-rank">5</div>
+                            <div class="product-name">
+                                <i class="fas fa-fill-drip"></i>
+                                IPA 99.9%
+                            </div>
+                            <div class="product-sales">98 đơn</div>
+                            <div class="product-revenue">6.5M ₫</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orders & Inventory -->
+            <div class="data-row">
+                <!-- Recent Orders -->
+                <div class="data-card">
+                    <div class="card-header">
+                        <h3>Đơn Hàng Gần Đây</h3>
+                        <a href="#orders" class="view-all">Xem tất cả</a>
+                    </div>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Mã ĐH</th>
+                                    <th>Khách hàng</th>
+                                    <th>Sản phẩm</th>
+                                    <th>Giá trị</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#ORD-2845</strong></td>
+                                    <td>
+                                        <div class="customer-cell">
+                                            <div class="customer-avatar">NV</div>
+                                            <span>Nguyễn Văn A</span>
+                                        </div>
+                                    </td>
+                                    <td>Ethanol 99.9% x2</td>
+                                    <td>1,700,000 ₫</td>
+                                    <td><span class="status-badge pending">Chờ xử lý</span></td>
+                                    <td>
+                                        <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn"><i class="fas fa-check"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#ORD-2844</strong></td>
+                                    <td>
+                                        <div class="customer-cell">
+                                            <div class="customer-avatar">LH</div>
+                                            <span>Lab ĐHQG</span>
+                                        </div>
+                                    </td>
+                                    <td>HCl 37% x5</td>
+                                    <td>1,600,000 ₫</td>
+                                    <td><span class="status-badge processing">Đang xử lý</span></td>
+                                    <td>
+                                        <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn"><i class="fas fa-truck"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#ORD-2843</strong></td>
+                                    <td>
+                                        <div class="customer-cell">
+                                            <div class="customer-avatar">PM</div>
+                                            <span>Phạm Minh</span>
+                                        </div>
+                                    </td>
+                                    <td>NaOH 98% x1</td>
+                                    <td>1,250,000 ₫</td>
+                                    <td><span class="status-badge shipping">Đang giao</span></td>
+                                    <td>
+                                        <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn"><i class="fas fa-map-marker-alt"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#ORD-2842</strong></td>
+                                    <td>
+                                        <div class="customer-cell">
+                                            <div class="customer-avatar">TL</div>
+                                            <span>Trần Lê B</span>
+                                        </div>
+                                    </td>
+                                    <td>Acetone 99.5% x3</td>
+                                    <td>2,160,000 ₫</td>
+                                    <td><span class="status-badge completed">Hoàn thành</span></td>
+                                    <td>
+                                        <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn"><i class="fas fa-file-invoice"></i></button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#ORD-2841</strong></td>
+                                    <td>
+                                        <div class="customer-cell">
+                                            <div class="customer-avatar">HN</div>
+                                            <span>Hoàng Nam</span>
+                                        </div>
+                                    </td>
+                                    <td>IPA 99.9% x2</td>
+                                    <td>1,840,000 ₫</td>
+                                    <td><span class="status-badge completed">Hoàn thành</span></td>
+                                    <td>
+                                        <button class="action-btn"><i class="fas fa-eye"></i></button>
+                                        <button class="action-btn"><i class="fas fa-file-invoice"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Low Stock Alert -->
+            <div class="data-row">
+                <div class="data-card alert-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Cảnh Báo Tồn Kho</h3>
+                        <button class="btn btn-primary btn-small">Tạo đơn nhập hàng</button>
+                    </div>
+                    <div class="alert-grid">
+                        <div class="alert-item">
+                            <div class="alert-product">
+                                <i class="fas fa-droplet" style="color: #9b59b6;"></i>
+                                <div>
+                                    <h4>Acetone 99.5%</h4>
+                                    <span class="product-code">ACE-995</span>
+                                </div>
+                            </div>
+                            <div class="alert-stock">
+                                <span class="stock-current">8 can</span>
+                                <span class="stock-min">/ Tối thiểu: 20 can</span>
+                            </div>
+                            <div class="alert-action">
+                                <button class="btn btn-secondary btn-small">Nhập hàng</button>
+                            </div>
+                        </div>
+
+                        <div class="alert-item">
+                            <div class="alert-product">
+                                <i class="fas fa-biohazard" style="color: #c0392b;"></i>
+                                <div>
+                                    <h4>Nitric Acid 65%</h4>
+                                    <span class="product-code">HNO3-65</span>
+                                </div>
+                            </div>
+                            <div class="alert-stock">
+                                <span class="stock-current">5 chai</span>
+                                <span class="stock-min">/ Tối thiểu: 15 chai</span>
+                            </div>
+                            <div class="alert-action">
+                                <button class="btn btn-secondary btn-small">Nhập hàng</button>
+                            </div>
+                        </div>
+
+                        <div class="alert-item">
+                            <div class="alert-product">
+                                <i class="fas fa-vials" style="color: #16a085;"></i>
+                                <div>
+                                    <h4>KMnO4 99%</h4>
+                                    <span class="product-code">KMNO4-99</span>
+                                </div>
+                            </div>
+                            <div class="alert-stock">
+                                <span class="stock-current">12 hộp</span>
+                                <span class="stock-min">/ Tối thiểu: 30 hộp</span>
+                            </div>
+                            <div class="alert-action">
+                                <button class="btn btn-secondary btn-small">Nhập hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity & Quick Actions -->
+            <div class="data-row">
+                <div class="data-card">
+                    <div class="card-header">
+                        <h3>Hoạt Động Gần Đây</h3>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon blue">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Đơn hàng mới #ORD-2845</strong> từ Nguyễn Văn A</p>
+                                <span class="activity-time">2 phút trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon green">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Khách hàng mới</strong> đăng ký tài khoản</p>
+                                <span class="activity-time">15 phút trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon orange">
+                                <i class="fas fa-box"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Nhập kho</strong> 50 can Ethanol 99.9%</p>
+                                <span class="activity-time">1 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon purple">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Đơn hàng #ORD-2840</strong> đã được giao thành công</p>
+                                <span class="activity-time">2 giờ trước</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon red">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <p><strong>Cảnh báo:</strong> Acetone 99.5% sắp hết hàng</p>
+                                <span class="activity-time">3 giờ trước</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-card">
+                    <div class="card-header">
+                        <h3>Thao Tác Nhanh</h3>
+                    </div>
+                    <div class="quick-actions">
+                        <button class="quick-action-btn">
+                            <i class="fas fa-plus-circle"></i>
+                            <span>Thêm sản phẩm</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <i class="fas fa-file-invoice"></i>
+                            <span>Tạo hóa đơn</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <i class="fas fa-warehouse"></i>
+                            <span>Nhập kho</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>Thêm khách hàng</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <i class="fas fa-file-export"></i>
+                            <span>Xuất báo cáo</span>
+                        </button>
+                        <button class="quick-action-btn">
+                            <i class="fas fa-envelope"></i>
+                            <span>Gửi email</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/admin.js"></script>
+</body>
+</html>
+

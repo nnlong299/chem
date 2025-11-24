@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Mục Sản Phẩm - ChemTrade</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-flask"></i>
+                    <span>ChemTrade</span>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm hóa chất, dung môi, thuốc thử...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="header-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Hotline: 1900-xxxx</span>
+                    </a>
+                    <a href="#" class="header-link">
+                        <i class="fas fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <a href="cart.html" class="header-link cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">3</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html" class="active">Sản phẩm</a></li>
+                    <li><a href="#">Dung môi</a></li>
+                    <li><a href="#">Hóa chất phân tích</a></li>
+                    <li><a href="#">Thiết bị phòng thí nghiệm</a></li>
+                    <li><a href="#">Giải pháp</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="admin.html" style="color: #ff6b6b;">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Trang chủ</a> <span>/</span> <span>Sản phẩm</span>
+        </div>
+    </div>
+
+    <!-- Products Page -->
+    <section class="products-page">
+        <div class="container">
+            <div class="products-layout">
+                <!-- Sidebar Filters -->
+                <aside class="sidebar">
+                    <div class="filter-section">
+                        <h3>Danh Mục</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox" checked> Tất cả sản phẩm <span>(124)</span></label></li>
+                            <li><label><input type="checkbox"> Dung môi <span>(45)</span></label></li>
+                            <li><label><input type="checkbox"> Acid <span>(28)</span></label></li>
+                            <li><label><input type="checkbox"> Base <span>(18)</span></label></li>
+                            <li><label><input type="checkbox"> Muối <span>(22)</span></label></li>
+                            <li><label><input type="checkbox"> Thuốc thử <span>(11)</span></label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Độ Tinh Khiết</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox"> AR Grade (>99.5%)</label></li>
+                            <li><label><input type="checkbox"> Technical Grade (>99%)</label></li>
+                            <li><label><input type="checkbox"> Industrial Grade (>95%)</label></li>
+                            <li><label><input type="checkbox"> HPLC Grade</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Quy Cách Đóng Gói</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox"> 500ml - 1L</label></li>
+                            <li><label><input type="checkbox"> 2.5L - 5L</label></li>
+                            <li><label><input type="checkbox"> 20L - 25L</label></li>
+                            <li><label><input type="checkbox"> Thùng/Bao 50kg+</label></li>
+                        </ul>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Khoảng Giá</h3>
+                        <div class="price-range">
+                            <input type="number" placeholder="Từ" class="price-input">
+                            <span>-</span>
+                            <input type="number" placeholder="Đến" class="price-input">
+                            <button class="btn-filter">Lọc</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h3>Tình Trạng</h3>
+                        <ul class="filter-list">
+                            <li><label><input type="checkbox"> Còn hàng</label></li>
+                            <li><label><input type="checkbox"> Sắp hết hàng</label></li>
+                            <li><label><input type="checkbox"> Đặt trước</label></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-content">
+                    <div class="products-header">
+                        <div class="results-info">
+                            <h2>Tất Cả Sản Phẩm</h2>
+                            <p>Hiển thị 1-12 của 124 sản phẩm</p>
+                        </div>
+                        <div class="sort-options">
+                            <label>Sắp xếp:</label>
+                            <select>
+                                <option>Mới nhất</option>
+                                <option>Giá thấp đến cao</option>
+                                <option>Giá cao đến thấp</option>
+                                <option>Tên A-Z</option>
+                                <option>Bán chạy nhất</option>
+                            </select>
+                            <div class="view-toggle">
+                                <button class="active"><i class="fas fa-grip"></i></button>
+                                <button><i class="fas fa-list"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-badge">Bán chạy</div>
+                            <div class="product-image">
+                                <i class="fas fa-flask" style="font-size: 80px; color: #4a90e2;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Ethanol 99.9% (Technical Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: ETH-999</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Dung môi công nghiệp, đóng gói 25L/can</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">850,000 ₫</span>
+                                        <span class="unit">/can</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-badge new">Mới</div>
+                            <div class="product-image">
+                                <i class="fas fa-vial" style="font-size: 80px; color: #e74c3c;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Hydrochloric Acid 37% (AR Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: HCL-037</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Acid clohydric tinh khiết phân tích, 2.5L</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">320,000 ₫</span>
+                                        <span class="unit">/chai</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-droplet" style="font-size: 80px; color: #9b59b6;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Acetone 99.5% (Technical Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: ACE-995</span>
+                                    <span class="product-stock limited">Sắp hết</span>
+                                </div>
+                                <p class="product-desc">Dung môi hữu cơ, 20L/can</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">720,000 ₫</span>
+                                        <span class="unit">/can</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-prescription-bottle" style="font-size: 80px; color: #27ae60;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sodium Hydroxide Pellets 98%</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: NAOH-98</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">NaOH viên, 25kg/bao</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">1,250,000 ₫</span>
+                                        <span class="unit">/bao</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-wine-bottle" style="font-size: 80px; color: #f39c12;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sulfuric Acid 98% (AR Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: H2SO4-98</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Acid sulfuric đặc, 2.5L</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">385,000 ₫</span>
+                                        <span class="unit">/chai</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-flask-vial" style="font-size: 80px; color: #34495e;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Methanol 99.9% (HPLC Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: MEOH-HPLC</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Methanol tinh khiết HPLC, 4L</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">1,450,000 ₫</span>
+                                        <span class="unit">/chai</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-badge">Khuyến mãi</div>
+                            <div class="product-image">
+                                <i class="fas fa-atom" style="font-size: 80px; color: #e67e22;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sodium Chloride 99.5% (AR Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: NACL-995</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Muối ăn tinh khiết, 500g</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price-old">95,000 ₫</span>
+                                        <span class="price">75,000 ₫</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-vials" style="font-size: 80px; color: #16a085;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Potassium Permanganate 99%</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: KMNO4-99</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">KMnO4 dạng bột, 500g</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">285,000 ₫</span>
+                                        <span class="unit">/hộp</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-prescription-bottle-medical" style="font-size: 80px; color: #2980b9;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Sodium Bicarbonate 99%</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: NAHCO3-99</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Baking soda công nghiệp, 25kg</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">625,000 ₫</span>
+                                        <span class="unit">/bao</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-biohazard" style="font-size: 80px; color: #c0392b;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Nitric Acid 65% (AR Grade)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: HNO3-65</span>
+                                    <span class="product-stock limited">Sắp hết</span>
+                                </div>
+                                <p class="product-desc">Acid nitric đặc, 2.5L</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">420,000 ₫</span>
+                                        <span class="unit">/chai</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <i class="fas fa-fill-drip" style="font-size: 80px; color: #8e44ad;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Isopropyl Alcohol 99.9% (IPA)</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: IPA-999</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Cồn isopropyl, 20L/can</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">920,000 ₫</span>
+                                        <span class="unit">/can</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-badge new">Mới</div>
+                            <div class="product-image">
+                                <i class="fas fa-mortar-pestle" style="font-size: 80px; color: #7f8c8d;"></i>
+                            </div>
+                            <div class="product-info">
+                                <h3>Calcium Carbonate 98%</h3>
+                                <div class="product-meta">
+                                    <span class="product-code">Mã: CACO3-98</span>
+                                    <span class="product-stock in-stock">Còn hàng</span>
+                                </div>
+                                <p class="product-desc">Phấn canxi siêu mịn, 25kg/bao</p>
+                                <div class="product-footer">
+                                    <div class="product-price">
+                                        <span class="price">485,000 ₫</span>
+                                        <span class="unit">/bao</span>
+                                    </div>
+                                    <a href="product-detail.html" class="btn-add-cart"><i class="fas fa-eye"></i> Xem</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <span>...</span>
+                        <button class="page-btn">11</button>
+                        <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về ChemTrade</h4>
+                    <p>Đơn vị cung cấp hóa chất công nghiệp uy tín với hơn 15 năm kinh nghiệm trong ngành.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Danh Mục</h4>
+                    <ul>
+                        <li><a href="#">Dung môi</a></li>
+                        <li><a href="#">Acid & Base</a></li>
+                        <li><a href="#">Hóa chất phân tích</a></li>
+                        <li><a href="#">Thiết bị</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="#">MSDS & COA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Khu CN Tân Bình, TP.HCM</li>
+                        <li><i class="fas fa-phone"></i> 1900-xxxx</li>
+                        <li><i class="fas fa-envelope"></i> info@chemtrade.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ChemTrade. All rights reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+

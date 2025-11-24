@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - ChemTrade</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-top">
+                <div class="logo">
+                    <i class="fas fa-flask"></i>
+                    <span>ChemTrade</span>
+                </div>
+                <div class="search-bar">
+                    <input type="text" placeholder="Tìm kiếm hóa chất, dung môi, thuốc thử...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+                <div class="header-actions">
+                    <a href="#" class="header-link">
+                        <i class="fas fa-phone"></i>
+                        <span>Hotline: 1900-xxxx</span>
+                    </a>
+                    <a href="#" class="header-link">
+                        <i class="fas fa-user"></i>
+                        <span>Đăng nhập</span>
+                    </a>
+                    <a href="cart.html" class="header-link cart active">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge">3</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="products.html">Sản phẩm</a></li>
+                    <li><a href="#">Dung môi</a></li>
+                    <li><a href="#">Hóa chất phân tích</a></li>
+                    <li><a href="#">Thiết bị phòng thí nghiệm</a></li>
+                    <li><a href="#">Giải pháp</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="admin.html" style="color: #ff6b6b;">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Trang chủ</a> <span>/</span> <span>Giỏ hàng</span>
+        </div>
+    </div>
+
+    <!-- Cart Page -->
+    <section class="cart-page">
+        <div class="container">
+            <h1 class="page-title">Giỏ Hàng Của Bạn</h1>
+
+            <!-- Progress Steps -->
+            <div class="checkout-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Giỏ hàng</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Thông tin</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Thanh toán</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Hoàn tất</div>
+                </div>
+            </div>
+
+            <div class="cart-layout">
+                <!-- Cart Items -->
+                <div class="cart-items-section">
+                    <div class="cart-header">
+                        <h2>Sản phẩm (3 items)</h2>
+                        <a href="products.html" class="continue-shopping">
+                            <i class="fas fa-arrow-left"></i> Tiếp tục mua hàng
+                        </a>
+                    </div>
+
+                    <div class="cart-items">
+                        <!-- Cart Item 1 -->
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <i class="fas fa-flask" style="font-size: 60px; color: #4a90e2;"></i>
+                            </div>
+                            <div class="item-details">
+                                <h3>Ethanol 99.9% (Technical Grade)</h3>
+                                <div class="item-meta">
+                                    <span class="item-code">Mã: ETH-999</span>
+                                    <span class="separator">|</span>
+                                    <span class="item-stock in-stock"><i class="fas fa-check-circle"></i> Còn hàng</span>
+                                </div>
+                                <p class="item-desc">Dung môi công nghiệp, 25L/can</p>
+                                <div class="item-actions">
+                                    <button class="btn-text"><i class="fas fa-heart"></i> Lưu</button>
+                                    <button class="btn-text remove-item"><i class="fas fa-trash"></i> Xóa</button>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="price-label">Đơn giá:</span>
+                                <span class="price">850,000 ₫</span>
+                            </div>
+                            <div class="item-quantity">
+                                <label>Số lượng:</label>
+                                <div class="quantity-input">
+                                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                    <input type="number" value="2" min="1">
+                                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-total">
+                                <span class="total-label">Thành tiền:</span>
+                                <span class="total-price">1,700,000 ₫</span>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 2 -->
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <i class="fas fa-vial" style="font-size: 60px; color: #e74c3c;"></i>
+                            </div>
+                            <div class="item-details">
+                                <h3>Hydrochloric Acid 37% (AR Grade)</h3>
+                                <div class="item-meta">
+                                    <span class="item-code">Mã: HCL-037</span>
+                                    <span class="separator">|</span>
+                                    <span class="item-stock in-stock"><i class="fas fa-check-circle"></i> Còn hàng</span>
+                                </div>
+                                <p class="item-desc">Acid clohydric tinh khiết phân tích, 2.5L</p>
+                                <div class="item-actions">
+                                    <button class="btn-text"><i class="fas fa-heart"></i> Lưu</button>
+                                    <button class="btn-text remove-item"><i class="fas fa-trash"></i> Xóa</button>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="price-label">Đơn giá:</span>
+                                <span class="price">320,000 ₫</span>
+                            </div>
+                            <div class="item-quantity">
+                                <label>Số lượng:</label>
+                                <div class="quantity-input">
+                                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                    <input type="number" value="5" min="1">
+                                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-total">
+                                <span class="total-label">Thành tiền:</span>
+                                <span class="total-price">1,600,000 ₫</span>
+                            </div>
+                        </div>
+
+                        <!-- Cart Item 3 -->
+                        <div class="cart-item">
+                            <div class="item-image">
+                                <i class="fas fa-prescription-bottle" style="font-size: 60px; color: #27ae60;"></i>
+                            </div>
+                            <div class="item-details">
+                                <h3>Sodium Hydroxide Pellets 98%</h3>
+                                <div class="item-meta">
+                                    <span class="item-code">Mã: NAOH-98</span>
+                                    <span class="separator">|</span>
+                                    <span class="item-stock in-stock"><i class="fas fa-check-circle"></i> Còn hàng</span>
+                                </div>
+                                <p class="item-desc">NaOH viên, 25kg/bao</p>
+                                <div class="item-actions">
+                                    <button class="btn-text"><i class="fas fa-heart"></i> Lưu</button>
+                                    <button class="btn-text remove-item"><i class="fas fa-trash"></i> Xóa</button>
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span class="price-label">Đơn giá:</span>
+                                <span class="price">1,250,000 ₫</span>
+                            </div>
+                            <div class="item-quantity">
+                                <label>Số lượng:</label>
+                                <div class="quantity-input">
+                                    <button class="qty-btn minus"><i class="fas fa-minus"></i></button>
+                                    <input type="number" value="1" min="1">
+                                    <button class="qty-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="item-total">
+                                <span class="total-label">Thành tiền:</span>
+                                <span class="total-price">1,250,000 ₫</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coupon -->
+                    <div class="coupon-section">
+                        <div class="coupon-input">
+                            <i class="fas fa-ticket-alt"></i>
+                            <input type="text" placeholder="Nhập mã giảm giá">
+                            <button class="btn btn-secondary">Áp dụng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <aside class="cart-summary">
+                    <div class="summary-card">
+                        <h3>Tóm Tắt Đơn Hàng</h3>
+                        
+                        <div class="summary-row">
+                            <span>Tạm tính (3 sản phẩm):</span>
+                            <span class="amount">4,550,000 ₫</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Giảm giá:</span>
+                            <span class="amount discount">-0 ₫</span>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Phí vận chuyển:</span>
+                            <span class="amount shipping">Liên hệ</span>
+                        </div>
+                        
+                        <div class="summary-divider"></div>
+                        
+                        <div class="summary-row total">
+                            <span>Tổng cộng:</span>
+                            <span class="amount">4,550,000 ₫</span>
+                        </div>
+
+                        <div class="vat-notice">
+                            <i class="fas fa-info-circle"></i>
+                            Giá đã bao gồm VAT 10%
+                        </div>
+
+                        <button class="btn btn-primary btn-large btn-block">
+                            <i class="fas fa-lock"></i> Tiến Hành Đặt Hàng
+                        </button>
+
+                        <div class="payment-methods">
+                            <p>Chúng tôi chấp nhận:</p>
+                            <div class="payment-icons">
+                                <i class="fas fa-credit-card"></i>
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Info -->
+                    <div class="info-card">
+                        <h4><i class="fas fa-truck"></i> Thông Tin Vận Chuyển</h4>
+                        <ul>
+                            <li>Giao hàng toàn quốc</li>
+                            <li>Đóng gói an toàn theo quy định</li>
+                            <li>Vận chuyển hóa chất nguy hiểm có giấy phép</li>
+                            <li>Thời gian: 2-5 ngày làm việc</li>
+                        </ul>
+                    </div>
+
+                    <!-- Support -->
+                    <div class="info-card">
+                        <h4><i class="fas fa-headset"></i> Cần Hỗ Trợ?</h4>
+                        <p>Liên hệ ngay với chúng tôi</p>
+                        <div class="support-contact">
+                            <a href="tel:1900xxxx" class="support-btn">
+                                <i class="fas fa-phone"></i> 1900-xxxx
+                            </a>
+                            <a href="#" class="support-btn">
+                                <i class="fab fa-whatsapp"></i> Chat ngay
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="trust-badges">
+                        <div class="trust-badge">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Thanh toán an toàn</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-certificate"></i>
+                            <span>Chứng nhận ISO</span>
+                        </div>
+                        <div class="trust-badge">
+                            <i class="fas fa-undo"></i>
+                            <span>Đổi trả dễ dàng</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+
+            <!-- Safety Notice -->
+            <div class="safety-notice">
+                <div class="notice-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="notice-content">
+                    <h3>Lưu Ý An Toàn Hóa Chất</h3>
+                    <p>Khi nhận hàng, vui lòng kiểm tra kỹ bao bì. Đối với hóa chất nguy hiểm, cần có người am hiểu tiếp nhận. 
+                    Chúng tôi cung cấp đầy đủ MSDS và COA kèm theo. Vui lòng đọc kỹ hướng dẫn an toàn trước khi sử dụng.</p>
+                </div>
+            </div>
+
+            <!-- You May Also Like -->
+            <div class="suggestions">
+                <h2>Sản Phẩm Gợi Ý</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-droplet" style="font-size: 60px; color: #9b59b6;"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Acetone 99.5%</h3>
+                            <div class="product-price">
+                                <span class="price">720,000 ₫</span>
+                            </div>
+                            <button class="btn-add-cart"><i class="fas fa-cart-plus"></i> Thêm</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-fill-drip" style="font-size: 60px; color: #8e44ad;"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>IPA 99.9%</h3>
+                            <div class="product-price">
+                                <span class="price">920,000 ₫</span>
+                            </div>
+                            <button class="btn-add-cart"><i class="fas fa-cart-plus"></i> Thêm</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-wine-bottle" style="font-size: 60px; color: #f39c12;"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>Sulfuric Acid 98%</h3>
+                            <div class="product-price">
+                                <span class="price">385,000 ₫</span>
+                            </div>
+                            <button class="btn-add-cart"><i class="fas fa-cart-plus"></i> Thêm</button>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-image">
+                            <i class="fas fa-vials" style="font-size: 60px; color: #16a085;"></i>
+                        </div>
+                        <div class="product-info">
+                            <h3>KMnO4 99%</h3>
+                            <div class="product-price">
+                                <span class="price">285,000 ₫</span>
+                            </div>
+                            <button class="btn-add-cart"><i class="fas fa-cart-plus"></i> Thêm</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Về ChemTrade</h4>
+                    <p>Đơn vị cung cấp hóa chất công nghiệp uy tín với hơn 15 năm kinh nghiệm trong ngành.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Danh Mục</h4>
+                    <ul>
+                        <li><a href="#">Dung môi</a></li>
+                        <li><a href="#">Acid & Base</a></li>
+                        <li><a href="#">Hóa chất phân tích</a></li>
+                        <li><a href="#">Thiết bị</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hỗ Trợ</h4>
+                    <ul>
+                        <li><a href="#">Chính sách vận chuyển</a></li>
+                        <li><a href="#">Chính sách bảo hành</a></li>
+                        <li><a href="#">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="#">MSDS & COA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Liên Hệ</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Khu CN Tân Bình, TP.HCM</li>
+                        <li><i class="fas fa-phone"></i> 1900-xxxx</li>
+                        <li><i class="fas fa-envelope"></i> info@chemtrade.vn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ChemTrade. All rights reserved. | <a href="#">Chính sách bảo mật</a> | <a href="#">Điều khoản sử dụng</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/cart.js"></script>
+</body>
+</html>
+
